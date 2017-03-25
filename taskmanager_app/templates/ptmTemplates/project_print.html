@@ -1,0 +1,51 @@
+{% extends "ptmTemplates/label_print.html" %}
+
+{% block project_details %}
+<div class='project-details' >
+	<h2>Project details</h2>
+
+	<table>
+		<tr>
+			<th>Name</th>
+			<td colspan="3" >{{project.project_name}}</td>
+		</tr>
+		<tr>
+			<th>Creator</th>
+			<td>{{project.user}}</td>
+			<th>Status</th>
+			<td>{{project.status}}</td>
+		</tr>
+		<tr>
+			<th>Acronym</th>
+			<td>{{project.project_acronym}}</td>
+		</tr>
+		{% if project.project_desc %}
+		<tr>
+			<th>Description</th>
+			<td colspan="3" >{{project.project_desc}}</td>
+		</tr>
+		{% endif %}
+	</table>
+
+
+	<h2>History</h2>
+
+	<table>
+		<tr>
+			<th>Status</th>
+			<th>When</th>
+			<th>Who</th>
+		</tr>
+		{% for status in project.projectstatushistory_set.all %}
+		<tr>
+			<td>{{status.projectstatushistory_status}}</td>
+			<td>{{status.projectstatushistory_consummation_date|date:'l, N d. H:i'}}</td>
+			<td>{{status.projectstatushistory_user}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+
+	<hr />
+
+</div>
+{% endblock %}

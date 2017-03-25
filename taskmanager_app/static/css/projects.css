@@ -1,0 +1,78 @@
+
+#projects-list{
+	margin: 0px;
+	padding: 0px;
+}
+
+.popup-window{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	width: 800px;
+	height: 450px;
+	margin: 0 auto;
+	padding: 10px;
+	background-color: white;
+	border: 13px solid teal; /* #D3D3D3 - lightgray */
+	border-radius: 7px;
+	z-index: 100;
+	box-shadow: 3px 3px 5px #d2d2d2;
+	text-align: center;
+}
+
+#project_window DIV.form DIV.group {
+	float: left;
+	margin-left: 25px;
+}
+
+#project_window DIV.form DIV.group DIV {
+	margin: 20px 0 3px;
+	font: bold 12px/1.231 Helvetica, Arial, Clean, sans-serif;
+}
+
+#project_window DIV.form DIV.group INPUT {
+	width: 350px;
+	text-align: center;
+}
+
+#project_window DIV.form DIV.group INPUT.error {
+	outline: 3px solid red;
+}
+
+#open_project_window_button,
+#close_project_window_button,
+#submit_project_window_button {
+	margin: 0;
+	width: auto;
+}
+
+#close_project_window_button {
+	/*height: 28px;*/
+}
+
+#project_window DIV.form DIV.button_group {
+	margin-top: 30px;
+}
+
+#is_project_complete_checkbox {
+	height: 18px;
+}
+
+.project-list-item{
+	min-height: 30px;
+	padding: 5px;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	vertical-align: middle;
+}
+
+#project_panel .selected{
+	background: -moz-linear-gradient(left, rgba(147,147,147,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(147,147,147,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left, rgba(147,147,147,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left, rgba(147,147,147,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left, rgba(147,147,147,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+background: linear-gradient(to right, rgba(147,147,147,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6939393', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+}

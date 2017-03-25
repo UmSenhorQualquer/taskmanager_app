@@ -1,0 +1,33 @@
+<div id="reminder-window" title='Reminder editor' >
+	<form>{% csrf_token %}
+		
+		<input type='hidden' name='reminder_id' id='reminder-id'>
+		<input type='hidden' name='task_id' id='reminder-task-id'>
+
+		<div id='reminder-noconfirmation-container' class="reminder-form">
+			<input name="reminder_non_validated" id="reminder_non_validated" type="checkbox"> Do not ask for confirmation. 
+		</div>
+
+		<div id='reminder-subject-container' class="reminder-form">
+			<div>Subject</div>
+			<input name="reminder_subject" id='reminder-subject' type="text">
+		</div>
+
+		<div id='reminder-date-container' class="reminder-form" >
+			<div>Date</div>
+			<input id='reminder-date' name="reminder_date" class='date-input' value='__ ___ ____' type="text">
+		</div>
+
+		<div id='reminder-to-container' class="reminder-form" >
+			<div>To</div>
+			<!--<input name="reminder_recipients" id='reminder-to' type="text">-->
+			<textarea name="reminder_recipients" style="height:50px;" id='reminder-to'></textarea>
+			<div id="reminder-users-list" ></div>
+		</div>
+		
+		
+		<div>Text</div>
+		<textarea name="reminder_msg" id='reminder-msg' ></textarea>
+	</form>
+</div>
+

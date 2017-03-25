@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="/static/labelprint.css" type="text/css" />
+
+<div class='page' >
+
+	{% block project_details %}{% endblock %}
+
+	<h1>{{ label.tasklabel_name }}</h1>
+
+	<h2>Timeline</h2>
+	<ul class='tasks-list' >
+		{% for task in tasks %}
+		{% ifchanged task.task_start_date|date:"Y M" %}
+			<li class="year-month" >
+				<h3>{{ task.task_start_date|date:"Y M" }}</h3>
+			</li>
+		{% endifchanged %}
+		{% ifchanged task.task_start_date|date:"d l" %}
+			<li class="month-day" >{{ task.task_start_date|date:"d l" }}</li>
+		{% endifchanged %}
+		<li class="task-row" >
+			<span class='start-date' >{{ task.task_start_date|date:'H:i' }}</span>
+			<span class='end-date' >{{ task.task_end_date|date:'H:i' }}</span>
+			<span class='task-name' >
+				{% if task.task_is_title %}<b>{% endif %}
+				{{ task.task_name|safe }}
+				{% if task.task_is_title %}</b>{% endif %}
+			</span>
+			{% for u in task.task_users.all %}
+				{% if task.user == u %}<u>{{ u }}</u>{% else %}{{ u }}{% endif %}{% if not forloop.last %},{% endif %}
+			{% endfor %}
+		</li>
+		{% endfor %}
+	</ul>
+
+	<hr />
+	<h2>Documents</h2>
+
+	<ul class='tasks-list' >
+		{% for task in tasks %}
+			{% if task.taskattachment_set.all %}
+				{% ifchanged task.task_start_date|date:"Y M" %}
+					<li class="year-month" >
+						<h3>{{ task.task_start_date|date:"Y M" }}</h3>
+					</li>
+				{% endifchanged %}
+				{% ifchanged task.task_start_date|date:"d l" %}
+					<li class="month-day" >{{ task.task_start_date|date:"d l" }}</li>
+				{% endifchanged %}
+				<li class="task-row" >
+					<span class='start-date' >{{ task.task_start_date|date:'H:i' }}</span>
+					<span class='end-date' >{{ task.task_end_date|date:'H:i' }}</span>
+					{{ task.task_name|safe }}
+					<ul>
+						{% for att in task.taskattachment_set.all %}
+						<li>
+							<a href="/media/{{ att.task_attachment_file }}" target="_blank" >
+								{{ att.filename }}
+							</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+
+	<hr />
+	<h2>Comments</h2>
+
+	<ul class='tasks-list' >
+		{% for task in tasks %}
+			{% if task.observation_set.all %}
+				{% ifchanged task.task_start_date|date:"Y M" %}
+					<li class="year-month" >
+						<h3>{{ task.task_start_date|date:"Y M" }}</h3>
+					</li>
+				{% endifchanged %}
+				{% ifchanged task.task_start_date|date:"d l" %}
+					<li class="month-day" >{{ task.task_start_date|date:"d l" }}</li>
+				{% endifchanged %}
+				<li class="task-row" >
+					<span class='start-date' >{{ task.task_start_date|date:'H:i' }}</span>
+					<span class='end-date' >{{ task.task_end_date|date:'H:i' }}</span>
+					{{ task.task_name|safe }}
+					<ul>
+						{% for obj in task.observation_set.all %}
+						<li>
+							<span class='comment-date' >
+								{{ obj.observation_date|date:'l, N d. H:i'  }}
+							</span>
+							<span class='comment-text' >
+								{{ obj.observation_msg }}
+							</span>
+						</li>
+						{% endfor %}
+					</ul>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+
+</div>

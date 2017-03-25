@@ -1,0 +1,54 @@
+{% load url from future %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block head_title %}{% endblock %}</title>
+    {% block extra_head %}
+    {% endblock %}
+    <link rel="stylesheet" href="/static/login.css" />
+    <link rel="stylesheet" href="/static/suit/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/login.css" />
+  </head>
+  <body>
+  <div class="content" >
+    {% block body %}
+
+          {% if messages %}
+          <div>
+            <strong>Messages:</strong>
+            <ul>
+            	{% for message in messages %}<li>{{message}}</li>{% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
+          
+            <ul class="menu" >
+              	{% if user.is_authenticated %}
+              	<li>
+                  <a class="btn btn-success" href="{% url 'account_email' %}">
+                    <i class="icon-plus-sign icon-white"></i>&nbsp;
+                    Change E-mail
+                  </a>
+                </li>
+              	<li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+              	{% else %}
+              	<li>
+                  <a class="btn btn-info" href="{% url 'account_login' %}">
+                    <i class="icon-plus-sign icon-white"></i> Login
+                  </a>
+                </li>
+              	<li>
+                  <a class="btn btn-success" href="{% url 'account_signup' %}">
+                    <i class="icon-plus-sign icon-white"></i> Sign Up
+                  </a>
+                </li>
+              	{% endif %}
+            </ul>
+          {% block content %}{% endblock %}
+
+    {% endblock %}
+    {% block extra_body %}{% endblock %}
+    </div>
+  </body>
+</html>

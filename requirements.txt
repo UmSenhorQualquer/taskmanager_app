@@ -1,0 +1,8 @@
+django>=1.10.6
+git+https://github.com/UmSenhorQualquer/django-jfu.git
+django-allauth
+mysqlclient
+paramiko
+fabric3
+python-dateutil
+pytz

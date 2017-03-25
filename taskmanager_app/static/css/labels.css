@@ -1,0 +1,81 @@
+#left-panel{
+	background-color: #dedede;
+}
+
+#left-panel #labels-list{
+	margin: 0px;
+	padding: 0px;
+	margin-left: 5px;
+}
+
+.jstree-anchor{
+	padding-left: 10px;
+	padding-right: 5px;
+	padding-bottom:8px;
+	padding-top:8px;
+	min-height: 41px;
+	line-height: 41px;
+
+	width: 200px;
+
+}
+
+
+#left-panel #labels-list .label-text{
+	display: inline-block;
+}
+
+#left-panel #labels-list .color{
+	display: inline-block;
+	position: absolute;
+	left: 0px;
+	width: 10px;
+	font-size: 1px;
+	height: 41px;
+}
+#left-panel #labels-list .menu-button{
+	display: inline-block;
+	float: right;
+	font-size: 11px;
+	display: none;
+	margin-right: 5px;
+	z-index: 999;
+}
+
+.jstree-default{
+	padding-left: 10px;
+	/*border-radius: 0px;
+	padding-left: 10px !important;*/
+}
+
+.jstree-default .jstree-node {
+	min-height: 41px;
+	line-height: 41px;
+}
+
+.jstree-default .jstree-icon:empty{
+	line-height: 41px;
+	width: 18px;
+	height: 41px;
+	vertical-align: middle;
+}
+
+
+.jstree-default > .jstree-no-dots .jstree-open > .jstree-ocl {
+  background-position: -36px 3px;
+}
+
+.jstree-default > .jstree-no-dots .jstree-closed > .jstree-ocl {
+  background-position: -4px 3px;
+}
+
+.jstree-default .jstree-hovered {
+	background: #CED7E0;
+	border-radius: 0px;
+	box-shadow: inset none;
+}
+
+.jstree-default .jstree-clicked{
+	background: #CED7E0;
+	font-weight: bold;
+}

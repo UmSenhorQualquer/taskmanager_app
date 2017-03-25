@@ -1,0 +1,28 @@
+#container {
+	position: relative;
+	width: 100%;
+}
+
+#project_panel,
+#task_panel,
+#detail_panel {
+	position: relative;
+	display: block;
+	border: 1px solid red;
+	height: 100px;
+	float: left;
+}
+
+#project_panel {
+	width: 15%;
+}
+
+#task_panel {
+	width: 50%;
+}
+
+#detail_panel {
+	width: 0;
+	transition-property: width;
+	transition-duration: 1s;
+}

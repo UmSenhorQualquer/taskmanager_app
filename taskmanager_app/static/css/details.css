@@ -1,0 +1,235 @@
+#right-panel{
+	background-color: white;
+}
+
+
+#details_panel {
+	min-height: 300px;
+}
+
+#details_panel #details_panel_predecessors UL {
+	padding: 0; /* Remove indentation */
+	min-height: 200px;
+	margin: 0px;
+}
+
+#details_panel #details_panel_predecessors UL LI {
+	display: block; /* Force removal of 'display: list-item' */
+	list-style-type: none;
+	font-size: 12px;
+	text-align: left;
+	margin: 3px auto;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #CCC;
+	margin-bottom: 5px;
+}
+
+#details_panel #details_panel_predecessors .placeholder {
+	text-align: center;
+	vertical-align: center;
+	color: #999;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	border-bottom: none;
+}
+
+
+#details_panel .ui-tabs{
+	padding: 0px;
+	margin: 0px;
+	background-color: white;
+}
+
+#details_panel .ui-tabs-nav{
+	background-color: #F2F2F2;
+}
+
+#details_panel .ui-tabs .ui-tabs-nav{
+	padding: 0px;
+	margin: 0px;
+	border-radius: 0px !important;
+}
+
+#details_panel .ui-widget-content{
+	background-color: white;
+}
+
+
+#details_panel .ui-corner-top{
+	border-radius: 0px;
+}
+
+#details_panel .ui-tabs .ui-tabs-nav li{
+	margin: 0px;
+	border: none;
+	background: none;
+}
+
+#details_panel .ui-tabs .ui-tabs-nav li.ui-tabs-active{
+	background-color: white !important;
+}
+
+
+
+#details_panel .observation-title{
+	padding-right: 10px;
+	padding-left: 2px;
+}
+
+#details_panel button.delete, #details_panel button.edit{
+	border: none;
+	background-color: white;
+	float: right;
+}
+
+#task_comment{
+	width: 100%;
+	border: 1px solid #DDD;
+	min-height: 100px;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+[contenteditable=true]:empty:before {
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+  color: #ccc;
+}
+
+#task-name{
+	font-size: 16px;
+	padding: 5px 10px;
+	width: 100%;
+	border: none;
+}
+
+#send_obs_btn{
+	text-align: right;
+}
+
+#task_comment_list pre{
+	margin: 0px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	padding: 5px;
+	width: 100%;
+}
+
+#task_comment_list small{
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+
+#details_panel_observations{
+	padding-top: 30px;
+}
+
+
+#details_panel_observations #tast_comment{
+	max-height: 200px;
+	min-height: 100px;
+	margin-bottom: 10px;
+	
+}
+
+#details_panel_observations #task_comment_list{
+	min-height: 70px;
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+#details_panel_observations #task_comment_list pre{
+	border-radius: 0px;
+	background-color: #fcfcfc;
+  	border: 1px solid #ddd;
+}
+
+#details_panel_predecessors li{
+	vertical-align: middle;
+	
+	overflow: hidden;
+}
+
+#details_panel_predecessors div{
+	width: 60%;
+	margin-right: 10px;
+	float: left;
+}
+
+#new-reminder-button{
+	float: right;
+	margin-bottom: 20px;
+}
+
+#details_panel #tabs{
+	display: none;
+}
+
+#details_panel table{
+	width: 100%;
+	margin-top: 20px;
+	border: none;
+	border-collapse: collapse;
+}
+
+
+#details_panel td, #details_panel th{
+	border: none;
+	border-bottom: 1px solid #CCC;
+}
+
+
+#reminders-list td.when{
+	width: 100px
+}
+
+#reminders-list td.edit{
+	width: 20px
+}
+
+#reminders-list td.delete{
+	width: 20px
+}
+
+#predecessors-list td.label{
+	width: 200px;
+}
+
+#predecessors-list td.delete{
+	width: 20px;
+}
+
+#predecessors-list td.datetime{
+	width: 120px;
+}
+
+#details-info-message{
+	min-height: 300px;
+	width: 100%;
+	
+	text-align: center;
+	vertical-align: center;
+	color: #999;
+	padding-top: 140px;
+	font-size: 12px;
+}
+
+#reminder-users-list{
+	margin-top: 5px;
+}
+
+#reminder-users-list button{
+	margin-right: 5px;
+}
+
+#reminder-window{
+	background-color: white;
+}
+
+#reminder-window input, #reminder-window textarea{
+	border: 1px solid #ddd;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}

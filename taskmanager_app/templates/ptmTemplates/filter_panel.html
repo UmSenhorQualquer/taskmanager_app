@@ -1,0 +1,90 @@
+<div class="filter-panel" id='filter-panel' >
+
+<button class='btn btn-success' id='download-label-snapshoot-btn' title="Snapshot: Export tasks to your folder" >
+	<i class="glyphicon glyphicon-camera"></i>
+</button>
+
+<button class='btn btn-success' id='download-label-print-btn' title="Present tasks in a printable format" >
+	<i class="glyphicon glyphicon-print"></i>
+</button>
+
+
+<button class='btn btn-success' id='download-label-ical-btn' title="Export tasks to iCalendar or Google Calender" >
+	<i class="glyphicon glyphicon-calendar"></i>
+</button>
+
+<button class='btn btn-primary' id='download-user-rss-btn' title="Receive via RSS all your pending tasks" >
+	User RSS
+</button>
+
+
+
+
+</div>
+
+
+<script >
+
+$('#download-user-rss-btn').click(function(e) {
+    e.preventDefault();  //stop the browser from following
+    window.location.href = '/user/rss/';
+});
+
+
+$('#download-label-ical-btn').click(function(e) {
+	if($('.labels-list .selected').length!=1){
+		Utils.alert("Please select one label.");
+		return;
+	}
+
+	var label_id = $(".labels-list .selected").attr('label-id');
+
+    e.preventDefault();  //stop the browser from following
+    window.location.href = '/labels/ical/'+label_id+'/';
+});
+
+$('#download-label-print-btn').click(function(e) {
+	if($('.labels-list .selected').length!=1){
+		Utils.alert("Please select one label.");
+		return;
+	}
+
+	var label_id = $(".labels-list .selected").attr('label-id');
+
+    e.preventDefault();  //stop the browser from following
+    var win = window.open('/labels/print/'+label_id+'/', '_blank');
+});
+
+
+
+$('#download-label-snapshoot-btn').click(function(e) {
+	if($('.labels-list .selected').length!=1){
+		Utils.alert("Please select one label.");
+		return;
+	}
+	if($(this).hasClass('btn-success')){
+
+		var label_id = $(".labels-list .selected").attr('label-id');
+		var self = this;
+		$(this).children('i').removeClass('glyphicon-camera');
+		$(this).children('i').addClass('glyphicon-refresh');
+		$(this).removeClass('btn-success');
+		
+
+		$.ajax({
+			url: "/labels/snapshot/"+label_id+'/', 
+			type: "get",
+			success: function(data){
+
+				if(data.result!='Ok'){
+					Utils.alert(data.result);
+				}
+				$(self).children('i').removeClass('glyphicon-refresh');
+				$(self).children('i').addClass('glyphicon-camera');
+				$(self).addClass('btn-success');
+			}
+		});
+
+	}
+});
+</script>

@@ -1,0 +1,27 @@
+{% load jfutags %}
+<div id="details_panel">
+	<div id='task-name'
+		 placeholder="Type here the lable of the task." 
+		 contentEditable="true" ></div>
+	<div id="tabs" class="tabs-bottom">
+		<ul>
+			<li><a href="#details_panel_observations">Observations</a></li>
+			<li><a href="#details_panel_attachments">Attachments</a></li>
+			<li><a href="#details_panel_predecessors">Predecessors</a></li>
+			<li><a href="#details_panel_reminders">Reminders</a></li>
+		</ul>
+
+		<div class="tabs-spacer"></div>
+		<div id="details_panel_observations">{% include 'ptmTemplates/task_observations.html' %}</div>
+		<div id="details_panel_attachments">{% jfu 'ptmTemplates/file_uploader.html' 'jfu_upload' %}</div>
+		<div id="details_panel_predecessors">
+			<table id='predecessors-list' >
+			<tr><td class="placeholder">Drop the predecessors tasks here.</td></tr>
+			</table>
+		</div>
+		<div id="details_panel_reminders">{% include 'ptmTemplates/task_reminders.html' %}</div>
+
+	</div>
+	<div id='details-info-message' >Please select a task.</div>
+</div>
+

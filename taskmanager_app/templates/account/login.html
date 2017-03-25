@@ -1,0 +1,59 @@
+
+
+{% load i18n %}
+{% load account %}
+{% load url from future %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/login.css" />
+<div class="content" style='padding-top:0px' >
+  
+  <div style='width:600px; padding-top:100px; margin: auto auto;' >
+    
+
+   <div class="login">
+    <form id="openid_form" action='/accounts/google/login/?process=login' method="get">
+      <fieldset class="google-sign-in" >
+        <legend>{% trans "Signin using your Neuro account" %}</legend>
+        <div id="openid_input_area">
+          <img src="/static/google_logo.png" >
+          <br/>
+          <br/>
+          <input class="button" 
+          name="openid_submit" type="submit" 
+          value='Sign in with your Google Account' >
+        </div>
+      </fieldset>
+    </form>
+  </div>  
+
+</div>
+
+<div id="otherLogin" class="login" style="margin-top:30px;">
+  <form id="auth_form" name="auth_form" action='{% url 'account_login' %}' method="post">
+    {% csrf_token %}
+    
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    
+
+    <fieldset class="sign-in">
+      <legend>Sign in using your Champalimaud account</legend>
+      {{ form.as_p }}
+      <div class="submit-row">
+        <input class="button" name="blogin" value='{% trans "Sign In" %}' type="submit">
+      </div> 
+    </fieldset>
+  </form>
+</div>
+<div style="text-align:center">
+  or <a href="/accounts/signup/">sign up</a> if you are not registered yet.
+</div>
+
+</div>
+
+
+</div>
+
+{% endblock %}

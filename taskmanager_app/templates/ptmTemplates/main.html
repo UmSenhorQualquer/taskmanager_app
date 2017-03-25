@@ -1,0 +1,21 @@
+
+
+{% include "ptmTemplates/status_bar.html" %}
+
+<div id='dashboard' >
+	<div id='tasks-labels-dashboard' >
+		<div id="left-panel">
+			{% include "ptmTemplates/label_panel.html" %}
+		</div>
+		
+		<div id="central-panel">
+			{% include "ptmTemplates/task_panel.html" %}
+		</div>
+
+	</div>
+
+	<div id="right-panel">
+		{% include "ptmTemplates/task_details.html" %}
+		{% include "ptmTemplates/quickreports.html" %}
+	</div>
+</div>

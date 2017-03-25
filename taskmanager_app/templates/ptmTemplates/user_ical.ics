@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID://Champalimaud Scientific Software Platoform//PTM//Language{% for task in tasks %}
+BEGIN:VEVENT
+SUMMARY:{{ task.task_name }}
+UID:{{ task.pk }}@ChampalimaudPTM
+DTSTART:{{ task.task_start_date|date:"Ymd\THis" }}
+DTEND:{{ task.task_end_date|date:"Ymd\THis" }}{% if task.task_is_important %}
+BEGIN:VALARM
+TRIGGER:-PT10M
+REPEAT:1
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM{% endif %}
+END:VEVENT{% endfor %}
+END:VCALENDAR

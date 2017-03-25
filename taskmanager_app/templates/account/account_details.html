@@ -1,0 +1,34 @@
+{% if contracts_ending %}
+
+	<h2>Expiring contracts</h2>
+
+	<table>
+		<tr>
+			<th>Person</th>
+			<th>Contract ref.</th>
+			<th>Contract ending</th>
+		</tr>
+		{% for contract in contracts_ending %}
+		<tr>
+			<td style="padding-left:20px;padding-right:20px;" >
+				{{ contract.person }}
+			</td>
+			<td style="padding-left:20px;padding-right:20px;" >{{ contract.contract_ref }}</td>
+			<td style="padding-left:20px;padding-right:20px;{% if today > contract.contract_end %}color:red;{% endif %}" >
+				{{ contract.contract_end|date:"Y-m-d" }}
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<br/>
+	<small style='color:orange' >
+		<b>Note</b>: Expired contracts are not shown in the above table.
+	</small>
+	<br/>
+	<small style='color:red' >Expired dates</small>
+	<br/>
+
+	
+{% else %}
+	Nothing to report
+{% endif %}

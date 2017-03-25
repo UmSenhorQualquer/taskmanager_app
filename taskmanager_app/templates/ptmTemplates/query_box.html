@@ -1,0 +1,47 @@
+<link href="/static/js/icheck/skins/all.css?v=1.0.2" rel="stylesheet" />
+<script type="text/javascript" src="/static/js/icheck/icheck.js?v=1.0.2" ></script>
+
+<div id='query-box-input-container' >
+
+	<input placeholder='Search' id='query-box-input' type='text' list="queries_list">
+	<button class='btn' id='query-winopen-btn' >
+		<i class="glyphicon glyphicon-chevron-down"></i>
+	</button>
+	<button class='btn btn-primary' id='query-box-btn' >
+		<i class="glyphicon glyphicon-search"></i>
+	</button>
+</div>
+
+
+<div id="search-dialog" title="Query builder">
+	<hr/>
+	
+	<ul id='search-dialog-filters' >
+
+		<li><input value='0' type='checkbox' /> Only my tasks</li>
+		<li><input value='1' type='checkbox' /> Tasks for today, including past overdue tasks</li>
+		<li><input value='2' type='checkbox' /> Next 7 days tasks, including past overdue tasks</li>
+		<li><input value='3' type='checkbox' /> Exclude overdue tasks</li>
+		<li><input value='4' type='checkbox' /> Exclude complete tasks</li>
+		<li><input value='5' type='checkbox' /> Unconfirmed reminders (next 7 days)</li>
+		<li><input value='6' type='checkbox' /> Important tasks</li>
+	</ul>
+	<hr/>
+	After: <input id="search-start-date" class="date-input" type="text">
+	&nbsp;&nbsp;&nbsp;
+	Before: <input id="search-end-date" class="date-input" type="text">
+
+
+	<button class='btn btn-primary' id='search-dialog-btn' style='float: right;' >
+		<i class="glyphicon glyphicon-search"></i>
+		Apply query
+	</button>
+</div>
+
+
+<script>
+	$('input').iCheck({
+		checkboxClass:'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue'
+    });
+</script>

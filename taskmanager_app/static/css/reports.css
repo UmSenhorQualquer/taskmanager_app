@@ -1,0 +1,67 @@
+#quick_reports{
+	padding: 10px;
+	margin-top: 20px;
+	z-index: 1;
+	font-size: 14px;
+	float: right;
+	padding-right: 20px;
+}
+
+#quick_reports ul{
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+}
+#quick_reports li{
+	list-style-type: none;
+}
+
+
+#quick_reports .quickreport-group{
+	width: 100%;
+	padding-left: 10px;
+	border-bottom: 1px dashed #999;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+#quick_reports .quickreport-report{
+	width: 100%;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+
+
+#quick_reports .quickreport-report, #quick_reports .quickreport-report *{
+	border: none;
+	border-collapse: collapse;
+	color: #333333;
+	font-weight: normal;
+}
+
+#quick_reports .quickreport-report td{
+	font-size: 12px;
+    line-height: 0px;
+    padding: 0px;
+    padding-bottom: 5px;
+    vertical-align: middle;
+}
+
+
+#quick_reports .quickreport-report td.label{
+	width: 80%;
+	border: none;
+	border-collapse: collapse;
+	text-transform: none;
+	padding-left: 20px;
+	text-align: left;
+}
+
+#quick_reports .quickreport-report td.value{
+	text-align: right;
+	border: none;
+	border-collapse: collapse;
+	padding-right: 20px;
+}
+

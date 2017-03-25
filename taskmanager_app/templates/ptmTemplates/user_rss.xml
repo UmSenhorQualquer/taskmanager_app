@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:admin="http://webns.net/mvcb/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
+
+<channel>
+  <title>Task manager</title>
+  <link>http://localhost:8000/</link>
+  <description>Task manager</description>
+  <dc:date>{{ datetime|date:"c" }}</dc:date>
+  <sy:updatePeriod>hourly</sy:updatePeriod>
+  <sy:updateFrequency>1</sy:updateFrequency>
+  <sy:updateBase>{{ datetime|date:"c" }}</sy:updateBase>
+
+  {% for task in tasks %}
+    <item>
+      <title>
+        {{ task.task_start_date|date:'Y.m.d - h:i' }} => {{ task.task_end_date|date:'Y.m.d - h:i' }} :
+        {{ task.task_name }}
+      </title>
+      <guid>{{ task.pk }}</guid>
+      <link>http://localhost:8000/</link>
+      <description>
+        Marked with labels: {% for label in task.tasklabels.all %}{{ label.tasklabel_name }}, {% endfor %}
+      </description>
+      <dc:subject>CF News</dc:subject>
+      <dc:date>{{ task.task_start_date|date:"c" }}</dc:date>
+    </item>
+  {% endfor %}
+</channel>
+</rss>

@@ -1,0 +1,394 @@
+#central-panel{
+	background-color: white;
+	overflow: auto;
+}
+
+#task_panel {
+	/*background-color: #DDE4EA;*/
+	background-color: white;
+	border: 0px;
+	/*
+    border-bottom: 1px solid #9CACBC;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 0 5px #888888;*/
+    float: left;
+    min-height: 400px;
+    z-index: 0;
+    width: 100%;
+    
+}
+
+#task-panel-top{
+	float: right;
+}
+
+#label-users-list{
+}
+
+#delete-user-from-label{
+	height: 62px;
+	float: right;
+	width: 40px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 62px
+}
+
+#tasks_container{
+}
+
+.title .column-name{
+	padding: 10px;
+}
+
+
+#task_table {
+	width: calc(100% - 1px);
+	border-collapse: collapse;
+	border: none;
+}
+
+#task_table TH {
+	text-align: center;
+	border-collapse: collapse;
+	border: none;
+	vertical-align: middle;
+	height: 40px;
+}
+
+#task_table TD {
+	vertical-align: middle;
+	border-collapse: collapse;
+	border: none;
+	border-bottom: 1px solid #CCC;
+}
+
+#task_table TD input{
+	background-color: transparent;
+	width: 100%;
+	outline: none;
+}
+
+
+/* N.B. - KEEP THE ORDER OF THE RULES WITHIN THE GROUP */
+/* BEGIN GROUP */
+#task_table TR.task {
+	cursor: pointer;
+	height: 40px;
+}
+#task_table TR.last-from-group .column-handler{
+	border-bottom: 2px solid #999;
+}
+#task_table TR.from-group{
+	border-right: 2px solid #999;
+}
+
+
+#task_table #task_new {
+}
+#task_table TR.important *{
+	color: red !important;
+	/*background-color: #FFCFCF;*/
+}
+#task_table TR.complete {
+	background-color: #CCD3D9;	
+}
+
+#task_table TR.complete{
+	background-color: #CCD3D9;	
+}
+
+
+.completed_task_by {
+	opacity: 0.5;
+	background-color: red;
+	color: white;
+	font-weight: bold;
+	border-color: white;
+}
+
+#task_table TR.complete TD.column-users .task-user {
+/*
+	opacity: 0.5;
+	background-color: red;
+	color: white;
+	font-weight: bold;
+	border-color: white;
+*/
+}
+
+#task_table TR.complete TD.column-delete *,
+#task_table TR.complete TD.column-handler * {
+	display: none;
+}
+
+#task_table TR.title{
+}
+#task_table TR.selected {
+	background-color: #FFCF44;
+}
+
+
+#task_table TR.selected INPUT {
+	background-color: orange;
+	box-shadow: 0 0 0px transparent;
+	cursor: text !important;
+}
+/* END GROUP */
+
+
+/* N.B. - KEEP THE ORDER OF THE RULES WITHIN THE GROUP */
+/* BEGIN GROUP */
+#task_table TR.task INPUT{
+	color: black;
+	border: none;
+	font-weight: normal;
+	background-color: transparent;
+ 	cursor: pointer;
+}
+#task_table #task_new INPUT {
+}
+#task_table TR.important INPUT {
+	color: black;
+}
+#task_table TR.complete INPUT {
+	color: white;
+/*	background-color: transparent;*/
+	border: 0 !important;
+}
+#task_table TR.title INPUT.name {
+	color: black;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 16px;
+}
+
+#task_table TR.title INPUT.start-date,
+#task_table TR.title INPUT.end-date {
+	color: #AAB1B7;
+}
+
+#task_table TR.title TD.column-users *,
+#task_table TR.title TD.column-delete *,
+#task_table TR.title TD.column-handler *{
+	display: none;
+}
+
+#task_table TR INPUT[type='checkbox']:not(:checked){
+	
+}
+
+
+
+#task_table TR.selected INPUT {
+	color: black;
+}
+/* END GROUP */
+#task_table input[type='text']{
+	cursor: text;
+}
+
+
+
+
+/*
+#task_table .newline {
+	cursor: pointer;
+}
+*/
+
+
+#task_table TD.hide {
+	display: none;
+}
+
+#task_table .column-complete,
+#task_table .column-important {
+	width: 20px;
+	padding: 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#task_table .column-complete{
+	padding-left: 10px;
+}
+
+#task_table .column-name {
+	cursor: pointer;
+}
+
+#task_table .column-start-date,
+#task_table .column-end-date {
+	cursor: pointer;
+	width: 135px;
+	text-align: center;
+}
+
+#task_table .column-users {
+	text-align: center;
+	max-width: 150px;
+	min-width: 72px;
+	padding: 2px;
+}
+
+#task_table .column-labels {
+	text-align: center;
+	max-width: 50px;
+	width: 50px;
+	min-width: 30px;
+	padding: 2px;
+}
+
+#task_table .column-delete {
+	text-align: center;
+	width: 20px;
+	padding: 2px;
+}
+
+#task_table .column-handler {
+	text-align: center;
+	width: 30px;
+	padding: 2px;
+	cursor: pointer;
+}
+
+
+#task_table .column-handler  IMG {
+	height: 15px;
+}
+
+
+#task_table TD.column-name.title INPUT.name
+/*
+#task_table TD.column-start-date.title INPUT.start-date,
+#task_table TD.column-end-date.title INPUT.end-date 
+*/
+{
+	/*margin-left: -8%;*/
+	/*box-shadow: 3px 3px 5px #d2d2d2;*/
+	width: 100%;
+}
+
+#task_table TR.title TD{
+	padding-top: 50px;
+	padding-bottom: 20px;
+	text-transform: uppercase;
+}
+
+
+/*
+#task_table TR.task:hover {
+	box-shadow: 3px 3px 5px #d2d2d2;
+}
+*/
+
+
+#task-panel-top input[type='text']{
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+	height: auto !important;
+	font-size: 14px;
+	background-color: white;
+	color: #333;
+	height: 32px !important;
+	position: relative;
+	top: 2px;
+	margin-right: 9px;
+}
+
+
+#task_panel .trash{
+	float: right;
+	padding: 0px;
+  	font-size: 18px;
+  	line-height: 0;
+  	position: relative;
+  	top: 5px;
+  	right: 5px;
+  	border-radius: 0px;
+  	border: 0px;
+  	z-index: 0;
+  	height: 32px;
+}
+
+#task_panel .trash.selected{
+	color: white;
+}
+
+
+
+
+.column-users{
+	padding: 0px;
+	margin: 0px;
+}
+
+.column-users div.users-container{
+	min-width: 72px;
+	min-height: 32px;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 2px;
+}
+
+.column-labels div.labels-container{
+	padding-left: 10px;
+}
+
+
+
+
+
+.user-thumb{
+	border-radius:16px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 9px;
+	padding-bottom: 0px;
+	margin-top: 15px;
+	margin-right: 5px;
+	cursor: pointer;
+	height: 32px;
+	width: 32px;
+	z-index: 1;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 13px;
+	float: right;
+
+	background-color: #428bca;
+  	border-color: 	  #357ebd;
+  	color: white;
+}
+
+.user-thumb span{
+	width: auto;
+	height: auto;
+	border:1px solid #999;
+	border-radius:0px;
+	position: relative;
+	top: -1px;
+	
+	background-color: white;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+
+	margin: 3px;
+	margin-right: 0px;
+	margin-top: 0px;
+	font-size: 10px
+}
+
+
+.labels-container .color{
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	border: 1px solid #999;
+}

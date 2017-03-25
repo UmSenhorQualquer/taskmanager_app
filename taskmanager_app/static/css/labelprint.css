@@ -1,0 +1,91 @@
+body{
+	font: 1em/1.231 Helvetica,Arial,Clean,sans-serif;
+	color: #333;
+
+	font-size: 10pt;
+	line-height: 20px;
+}
+
+.page{
+	margin: auto auto;
+	width: 21cm;
+}
+
+h1{
+	text-align: center;
+	text-transform: uppercase;
+}
+
+h2{
+	text-decoration: underline;
+	text-transform: uppercase;
+	font-size: 12pt;
+}
+
+.tasks-list{
+	list-style: none;
+	margin: 0px;
+}
+
+.tasks-list li{
+	margin: 0px;
+}
+
+.tasks-list .year-month{
+	padding-left: 10px;
+}
+
+.tasks-list .month-day{
+	padding-left: 30px;
+}
+
+.tasks-list .task-row{
+	padding-left: 60px;
+}
+.tasks-list .task-name{
+	display: inline-block;
+	width: 400px;
+}
+
+.comment-date{
+	display: inline-block;
+	width: 200px;
+	
+}
+
+.comment-text{
+	display: inline-block;
+}
+
+.project-details table{
+	font-size: 10pt;
+}
+
+table th{
+	text-align: left;
+	padding: 5px;
+}
+
+table td{
+	text-align: left;
+	padding: 5px;
+}
+
+
+
+a{
+	color: #428bca;
+	text-decoration: none;
+}
+
+span.start-date{
+	display: inline-block;
+	width: 50px;
+	color: #666;
+}
+
+span.end-date{
+	display: inline-block;
+	width: 50px;
+	color: #666;
+}
